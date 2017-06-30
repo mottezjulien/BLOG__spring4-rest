@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = "/rest/user")
+@RequestMapping(value = "/user")
 public class UserSpringRestController {
 
     private List<UserDTO> list = new ArrayList<>();

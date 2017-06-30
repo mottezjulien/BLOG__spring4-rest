@@ -1,4 +1,4 @@
-package fr.jmottez.lessons.spring.spring4;
+package fr.jmottez.lessons.spring.spring4.infrastructure.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
