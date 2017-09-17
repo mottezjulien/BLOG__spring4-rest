@@ -14,16 +14,17 @@
 				<tr ng-repeat="data in list">
 					<td>{{data.first_name}}</td>
 					<td>{{data.last_name}}</td>
-					<td><input type="button" ng-click="deleteUser(data)" value="supprimer" /></td>
-					<td><input type="button" ng-click="updateUser(data)" value="modifier" /></td>
+					<td><input type="button" ng-click="deleteUser(data)" ng-hide="displayForm" value="supprimer" /></td>
+					<td><input type="button" ng-click="updateUser(data)" ng-hide="displayForm" value="modifier" /></td>
 				</tr>
 			</table>
 		</div>
-        <input type="button" ng-click="createUser()" value="créer" />
+        <input type="button" ng-click="createUser()" ng-hide="displayForm" value="créer" />
         <div ng-show="displayForm">
             <label>Prénom</label> <input type="text" ng-model="current.first_name" />
             <label>Nom</label> <input type="text" ng-model="current.last_name" />
             <input type="button" ng-click="editUser()" value="{{current.id > 0 ? 'modifier' : 'créer'}}" />
+            <input type="button" ng-click="cancelEditUser()" value="annuler" />
         </div>
 	</div>
 </body>

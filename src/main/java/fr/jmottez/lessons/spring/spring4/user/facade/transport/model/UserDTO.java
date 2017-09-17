@@ -38,4 +38,20 @@ public class UserDTO {
     }
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof UserDTO)) return false;
+
+        UserDTO userDTO = (UserDTO) o;
+
+        if (id != userDTO.id) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
+    }
 }

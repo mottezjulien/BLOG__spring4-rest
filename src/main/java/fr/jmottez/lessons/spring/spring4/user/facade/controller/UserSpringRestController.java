@@ -24,9 +24,9 @@ public class UserSpringRestController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/{userId}")
     @ResponseBody
-    public UserDTO findById(@PathVariable(value = "userId") int pathId) {
+    public UserDTO findById(@PathVariable(value = "userId") int userId) {
         return list.stream()
-                .filter(dto -> dto.getId() == pathId)
+                .filter(dto -> dto.getId() == userId)
                 .findAny()
                 .orElseThrow(() -> new ResourceNotFoundException());
     }
@@ -36,12 +36,12 @@ public class UserSpringRestController {
     @ResponseBody
     public UserDTO save(@RequestBody UserDTO input) {
         if (list.contains(input)) {
-            return doMerge(input);
+            return merge(input);
         }
         return doSave(input);
     }
 
-    private UserDTO doMerge(UserDTO input) {
+    private UserDTO merge(UserDTO input) {
         list.set(list.indexOf(input), input);
         return input;
     }
@@ -52,11 +52,10 @@ public class UserSpringRestController {
         return input;
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, path = "/")
-    public ResponseEntity<Void> remove(@RequestBody UserDTO input) {
-        list.remove(input);
+    @RequestMapping(method = RequestMethod.DELETE, path = "/{userId}")
+    public ResponseEntity<Void> remove(@PathVariable(value = "userId") int userId) {
+        list.remove(findById(userId));
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
 }
-

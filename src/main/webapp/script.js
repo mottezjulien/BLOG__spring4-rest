@@ -1,6 +1,6 @@
 'use strict';
 
-const URL_USER = "/rest/user/";
+const URL_USER = "/" + location.pathname.split( '/' )[1] + "/rest/user/";
 
 var mon_app = angular.module('mon_app', []);
 
@@ -36,7 +36,7 @@ mon_app.controller('userController', [ '$scope', '$http', function($scope, $http
 			method: 'POST',
 			headers: [{'Content-Type': 'application/json'}],
 			url: URL_USER,
-			data: $scope.current,
+			data: $scope.current
 		}).success(function (data) {
             $scope.fct_list();
 		}).error(function (error) {
@@ -47,12 +47,16 @@ mon_app.controller('userController', [ '$scope', '$http', function($scope, $http
 	$scope.deleteUser = function(user){
 		$http({
 			method: 'DELETE',
-			url: URL_USER + user.id,
+			url: URL_USER + user.id
 		}).success(function (data) {
             $scope.fct_list();
 		}).error(function (error) {
             console.log("error:" + error);
 		});
 	}
+
+    $scope.cancelEditUser = function () {
+        $scope.displayForm = false;
+    }
 
 } ]);
