@@ -2,4 +2,4 @@
 
 Mise en place d'un serveur Rest via Spring 4
 
-Pour plus d'info: http://www.la-pause-dev.fr/archives/207
+Pour plus d'info: http://www.la-pause-dev.fr/page.html?page=208
