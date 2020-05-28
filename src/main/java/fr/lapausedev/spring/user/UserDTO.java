@@ -1,4 +1,4 @@
-package fr.jmottez.lessons.spring.spring4.user.facade.transport.model;
+package fr.lapausedev.spring.user;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

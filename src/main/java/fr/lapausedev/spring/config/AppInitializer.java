@@ -1,4 +1,4 @@
-package fr.jmottez.lessons.spring.spring4.infrastructure.config;
+package fr.lapausedev.spring.config;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;

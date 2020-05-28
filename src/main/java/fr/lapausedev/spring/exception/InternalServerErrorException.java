@@ -1,4 +1,4 @@
-package fr.jmottez.lessons.spring.spring4.infrastructure.facade.exception;
+package fr.lapausedev.spring.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

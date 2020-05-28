@@ -1,7 +1,6 @@
-package fr.jmottez.lessons.spring.spring4.user.facade.controller;
+package fr.lapausedev.spring.user;
 
-import fr.jmottez.lessons.spring.spring4.infrastructure.facade.exception.ResourceNotFoundException;
-import fr.jmottez.lessons.spring.spring4.user.facade.transport.model.UserDTO;
+import fr.lapausedev.spring.exception.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -12,7 +11,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping(value = "/user")
-public class UserSpringRestController {
+public class UserController {
 
     private List<UserDTO> list = new ArrayList<>();
 
